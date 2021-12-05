@@ -14,7 +14,7 @@ android {
         versionName "1.0"
 
         buildConfigField "String","BASE_URL","\"https://www.googleapis.com/youtube/v3/\""
-        buildConfigField "String","API_KEY","\"AIzaSyBhuLrWzqEom9tIbxkwuXj8DJI7tHwBbS0\""
+        buildConfigField "String","API_KEY","\"AIzaSyDVatQ9JCdefV-SRc0M9vM1-NJapgbO6mU\""
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    packagingOptions {
+        resources.excludes.add("META-INF/*")
+    }
 }
 
 dependencies {
@@ -53,17 +56,31 @@ dependencies {
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
-// Coroutines
-    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.1'
+    // Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.0'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0"
 
-// Interceptor
+    // Interceptor
     implementation("com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.2")
 
-// Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
+    // Lifecycle
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
 
-//Glide
+    // KoinDI
+    implementation "io.insert-koin:koin-android:2.2.3"
+    implementation "io.insert-koin:koin-androidx-scope:2.2.3"
+    implementation "io.insert-koin:koin-androidx-viewmodel:2.2.3"
+    implementation "io.insert-koin:koin-androidx-fragment:2.2.3"
+
+// KoinDI
+    implementation "io.insert-koin:koin-android:2.2.3"
+    implementation "io.insert-koin:koin-androidx-scope:2.2.3"
+    implementation "io.insert-koin:koin-androidx-viewmodel:2.2.3"
+    implementation "io.insert-koin:koin-androidx-fragment:2.2.3"
+
+
+    //Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
+
 }

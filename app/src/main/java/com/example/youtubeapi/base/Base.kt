@@ -9,23 +9,24 @@ abstract class Base<VB: ViewBinding>: AppCompatActivity() {
     protected lateinit var viewBinding: VB
     protected abstract fun inflateViewBinding(): VB
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         viewBinding = inflateViewBinding()
         setContentView(viewBinding.root)
         checkInternet()
         setUI()
-        setUpLiveData()
-        clickListener()
+        setupLiveData()
+        setupClickListener()
 
     }
 
-    abstract fun clickListener() // внутри этого метода обрабатываем все клики
+    abstract fun setupClickListener() // внутри этого метода обрабатываем все клики
 
     abstract fun setUI() // инициализация UI
 
     abstract fun checkInternet()
 
-    abstract fun  setUpLiveData()
+    abstract fun setupLiveData()
 
 }
